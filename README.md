@@ -1,6 +1,6 @@
 # Emotion-Analysis-Model
 
-Deployed at [emotion-analysis-cnn.herokuapp.com](emotion-analysis-cnn.herokuapp.com) with limited functionality (takes a few seconds to load). Can run this locally with Flask to get full functionality.
+Deployed at [emotion-analysis-cnn.herokuapp.com](https://emotion-analysis-cnn.herokuapp.com/) with limited functionality (takes a few seconds to load). Can run this locally with Flask to get full functionality.
 
 ## Highlights and Features
 
