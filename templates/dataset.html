@@ -40,7 +40,7 @@
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
-      height: 200%;
+      height: 350%;
     }
 
     .setpadding {
@@ -67,6 +67,10 @@
       font-size: 22px;
     }
 
+    .small {
+      font-size: 14px;
+    }
+
   </style>
 </head>
 <body>
@@ -90,27 +94,52 @@
   </div>
 </nav>
   
-<div class="container-fluid text-left">    
-    <div class="row content">
+<div class="container-fluid text-left">
+  <div class="row content">
       <div class="col-sm-2 sidenav">
-        <li><a href="/model">CNN</a></li>
-        <li><a href="/notebook">Jupyter Notebook</a></li>
-        <li><a href="/dataset">Dataset - Ravdess</a></li>
-        <li><a href="/analytics">Model Analytics</a></li>
+          <li><a href="/model">CNN</a></li>
+          <li><a href="/notebook">Jupyter Notebook</a></li>
+          <li><a href="/dataset">Dataset - Ravdess</a></li>
+          <li><a href="/analytics">Model Analytics</a></li>
       </div>
-      <div class="col-sm-8 setpadding text-left"> 
-        <h1>Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)</h1>
-        <p>
-          The dataset we used in order to train and test our model is the Ryerson Audio-Visual Database of Emotional Speech and Song dataset (or RAVDESS).
-          This dataset contains 7356 files of 12 female and 12 male voices, vocalizing two statements in a neutral North American accent.
-          Each of the 24 actors records 2 statements in each of 7 emotions which include calm, happy, sad, angry, fearful, surprise, and disgust. 
-          The audio also provides two levels of emotional intensity (normal, strong), with an additional neutral expression
+      <div class="col-sm-8 setpadding text-left">
+          <h1>Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)</h1>
+          <p>
+              The dataset we used in order to train and test our model is the Ryerson Audio-Visual Database of Emotional Speech and Song dataset (or RAVDESS). This dataset contains 7356 files of 12 female and 12 male voices, vocalizing two statements in a neutral North
+              American accent. Each of the 24 actors records 2 statements in each of 7 emotions which include calm, happy, sad, angry, fearful, surprise, and disgust. The audio also provides two levels of emotional intensity (normal, strong), with
+              an additional neutral expression.
           </p>
-        <hr>
-        <p> For more detailed information, please visit the RAVDESS website: <a href="https://smartlaboratory.org/ravdess/">https://smartlaboratory.org/ravdess/</a> </p> <br>
-      </div>
-    </div>
+          <p>
+              The filenames of each audio file consist of numerical identifiers, representing different characteristics:
+              <ol>
+                  <li>Modality: audio files, video files or both</li>
+                  <li>Vocal Channel: speech or song audio files</li>
+                  <li>Emotion: normal, calm, happy, sad, angry, fearful, disgust, surprised</li>
+                  <li>Emotional Intensity: normal or strong</li>
+                  <li>Sentence: 01 = “Kids are talking by the door”, 02 = “Dogs are sitting by the door”</li>
+                  <li>Sentence Repetition</li>
+                  <li>Actor (01 to 24. Odd numbered actors are male, even numbered actors are female).</li>
+              </ol>
+              For the purposes of this project, audio-only files were used as data input (modality = 03), and only speech files were used (voice channel = 01).
+          </p>
+          <p>When loading the dataset onto the model, the audio file names were broken down by identifier in order to obtain variables in each file, such as gender, actor and emotion. After retrieving the emotion identifiers, each one was redefined:
+              <ul>
+                  <li>1 = neutral</li>
+                  <li>2 = calm</li>
+                  <li>3 = happy</li>
+                  <li>4 = sad</li>
+                  <li>5 = angry</li>
+                  <li>6 = fearful</li>
+                  <li>7 = disgust</li>
+                  <li>8 = surprised</li>
+              </ul>
+          </p>
+          <hr>
+          <p> For more detailed information, please visit the RAVDESS website: <a href="https://smartlaboratory.org/ravdess/">https://smartlaboratory.org/ravdess/</a> </p> <br>
+          <p class="small"> Livingstone SR, Russo FA (2018) The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS): A dynamic, multimodal set of facial and vocal expressions in North American English. PLoS ONE 13(5): e0196391. https://doi.org/10.1371/journal.pone.0196391. </p>
+        </div>
   </div>
+</div>
 
 <!-- Footer -->
 <footer class="container-footer bg-4 text-center">

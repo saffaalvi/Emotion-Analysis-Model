@@ -15,6 +15,12 @@
     line-height: 1.8;
     color: #030c15;
     }
+    .col-sm-8half {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
 
     .container-fluid {
     padding-top: 0px;
@@ -39,7 +45,7 @@
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
-      height: 200%;
+      height: 700%;
     }
 
     .setpadding {
@@ -77,7 +83,7 @@
         padding: 15px;
       }
       .row.content {height:auto;} 
-    }
+      }
 
   </style>
 </head>
@@ -119,33 +125,47 @@
         <hr>
       </div>
 
-
-      <div id="summary" class="col-sm-8 setpadding text-left space"> 
-        <h2>Model Summary</h2>
+      <div id="summary" class="col-sm-8 setpadding text-left space">
+        <h2 style="color: #c26431">Model Summary</h2>
         <p>
-          INSERT PICTURE OF MODEL SUMMARY HERE
+            The Sequential CNN model is built with the following configurations:
+            <ul>
+                <li>3 Conv1D layers, each with the ReLU activation function</li>
+                <li>2 Dropout layers, rate of 20%</li>
+                <li>1 Flatten layer</li>
+                <li>3 Dense layers, using the ReLU and Softmax activation functions</li>
+            </ul>
+            <img src="/static/modelSummary.png" style="width:600px;height:500px;">
         </p>
-      </div>
-      <div id="fit" class="col-sm-8 setpadding text-left space"> 
-        <h2>Fitting the Model (Training)</h2>
-        <p>
-          INSERT PICTURE OF EPOCHS HERE
-        </p>
-      </div>
-      <div id="accuracy" class="col-sm-8 setpadding text-left space"> 
-        <h2>Accuracy (Plots)</h2>
-        <p>
-          INSERT PICTURE OF PLOTS/ACCURACY HERE
-        </p>
-      </div>
-      <div id="observations" class="col-sm-8 setpadding text-left space"> 
-        <h2>Observations</h2>
-        <p>
-          Talk about predictions from the website here
-        </p>
-      </div>
     </div>
-  </div>
+    <div id="fit" class="col-sm-8 setpadding text-left space">
+        <h2 style="color: #c26431">Fitting the Model (Training)</h2>
+        <img src="/static/epochs.png" style="width:800px;height:350px;">
+        <p>
+            After training the model, a final accuracy of ~97.85% and validation accuracy of ~92.97% are achieved.
+        </p>
+    </div>
+    <div id="accuracy" class="col-sm-8 setpadding text-left space">
+        <h2 style="color: #c26431">Accuracy (Plots)</h2>
+        <p>
+            <img src="/static/accuracy.png">
+            <img src="/static/loss.png">
+        </p>
+    </div>
+    <div id="observations" class="col-sm-8 setpadding text-left space">
+        <h2 style="color: #c26431">Observations</h2>
+        <p>
+            As shown in the confusion matrix, our model was able to predict strong emotions (ie. disgust, anger, calm, happy) with high accuracy. However, the model would often confuse the emotion 'neutral' with 'calm' or 'sad'. It would also confuse 'fear' with
+            'happy'.
+        </p>
+        <img src="/static/FinalModel_Confusion_Matrix.png">
+        <p>
+            Since the RAVDESS dataset consisted of audio files where 'calm' and 'neutral' had similar tones and pitch, the model may have had trouble distinguishing the two emotions for this reason. The same concept may apply to the 'fearful' and 'happy' emotions
+            as well.
+        </p>
+    </div>
+</div>
+</div>
 
 <!-- Footer -->
 <footer class="container-footer bg-4 text-center">

@@ -39,7 +39,7 @@
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
-      height: 300%;
+      height: 400%;
     }
 
     .setpadding {
@@ -68,6 +68,13 @@
         padding: 15px;
       }
       .row.content {height:auto;} 
+    }
+
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+      float: right;
+      width: 50%;
+      padding: 5px;
     }
 
   </style>
@@ -103,7 +110,8 @@
     </div>
     <div class="col-sm-8 setpadding text-left s"> 
       <h1 class="bottom">Convolutional Neural Network Model</h1>
-            The overall design of our program is as follows:
+      <img class="column" src="/static/model.png" style="width:496px;height:1069px;">
+        <h3> The overall design of our program is as follows: </h3>   
         <li>We first imported the RAVDESS dataset so we could load and use the audio files.</li>
         <li>Converting the speech to text was easily done by using available libraries such as 
             speech_recognition and APIs such as Google Web Speech API. In the future, this text input 
