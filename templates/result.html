@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>SmartCampus - CNN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    h3 {
+      padding-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">SmartCampus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/saffaalvi/Emotion-Analysis-Model">GitHub</a></li>
+        <li><a href="https://www.uwindsor.ca/">University of Windsor</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+    <h1 class="margin">Sentiment Analysis Model Results</h1><br>
+    <h2>Converting the audio into text:</h2>
+    <h3><span style="color: #098b94">{{ text }}</span></h3><br>
+    <h2>The model has predicted:</h2>
+    <h3><span style="color: #098b94">{{ output }}</span></h3><br>
+    <button onclick="goBack()" class="btn btn-primary">Go Back</button>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+    <p>Created By Saffa Alvi and Nour ElKott</p>  
+  </footer>
+
+<script>
+    function goBack() {window.history.back();}
+</script>

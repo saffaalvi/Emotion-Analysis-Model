@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Model</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <style>
+    body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #030c15;
+    }
+
+    .container-fluid {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    }
+
+    .container-footer {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    }
+
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 300%;
+    }
+
+    .setpadding {
+      padding-left:25px
+    }
+
+    .bottom {
+      padding-bottom: 10px;
+    }
+
+    .s {
+      font-size: 22px;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">SmartCampus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/saffaalvi/Emotion-Analysis-Model">GitHub</a></li>
+        <li><a href="https://www.uwindsor.ca/">University of Windsor</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-left">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <li><a href="/model">CNN</a></li>
+      <li><a href="/notebook">Jupyter Notebook</a></li>
+      <li><a href="/dataset">Dataset - Ravdess</a></li>
+      <li><a href="/analytics">Model Analytics</a></li>
+    </div>
+    <div class="col-sm-8 setpadding text-left s"> 
+      <h1 class="bottom">Convolutional Neural Network Model</h1>
+            The overall design of our program is as follows:
+        <li>We first imported the RAVDESS dataset so we could load and use the audio files.</li>
+        <li>Converting the speech to text was easily done by using available libraries such as 
+            speech_recognition and APIs such as Google Web Speech API. In the future, this text input 
+            can be used along with the emotional analysis to gain even more information.</li>
+        <li>We then created some visualizations of the dataset, such as the distribution of classes, 
+            and then for the audio samples themselves, we converted them into waveplots and spectrograms according to each emotion.</li>
+        <li>A waveplot describes the change in amplitude (loudness) of a signal over time.</li>
+        <li>A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time.</li>
+        <li>We then completed any data preprocessing that would be needed before passing the data into the model. 
+            We also applied some data augmentation methods to the audio files.</li>
+        <li>Next, we extracted features from the audio files, basically converting them into images that will be understandable by the CNN.</li>
+        <li>After that, we split the data into training and testing datasets.</li>
+        <li>We then created the convolutional neural network by first using a model from the Keras API, then adding in layers to build the CNN.</li>
+        <li>Next, we compiled and fit the model.</li>
+        <li>Finally, the model was evaluated by using the testing data to calculate its’ accuracy.</li>
+        <li>This model can then be used to predict the emotion of any given audio sample (such as pre-recorded audio or live input).</li>
+      <hr>
+      <p> For more detailed information including the code for the model, please click the "Jupyter Notebook" link on the left</p> <br>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="container-footer bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+  <p>Created By Saffa Alvi and Nour ElKott</p>  
+</footer>
+
+</body>
+</html>

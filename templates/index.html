@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>SmartCampus - CNN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">SmartCampus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/saffaalvi/Emotion-Analysis-Model">GitHub</a></li>
+        <li><a href="https://www.uwindsor.ca/">University of Windsor</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h2 class="margin">Convolutional Neural Network</h2>
+  <p>Explore the CNN made for this project. This model was trained on the RAVDESS dataset to take an audio input and predict the emotion of the audio clip.</p>
+  <form method="POST">
+    <div class="text-center margin2">
+        <input type="submit" name="submit_button" value="Explore Model" class="btn btn-default btn-lg"><br>
+    </div>
+  </form>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h2 class="margin">Speech-to-Text Converter and Model Prediction</h2>
+  <p>Provide an audio input (.wav file only) to the model to convert from speech to text and to see which emotion the model predicts! <br> 
+    *The prediction from model feature will only work for a local deployment. If you are loading an audio file, please make sure it is in the same directory as app.py otherwise it will raise an error.</p><br>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="margin2">
+        <input type="file" name="file" accept=".wav" class="text-center margin2 center-block btn btn-default btn-lg" />
+        <br>
+        <input type="submit" name = "submit_button" value="Load Audio File" class="btn btn-default btn-lg" />
+    </div>
+    <div class="text-center margin2">
+        <input type="submit" id="demo1" name="submit_button" value="Record Live Audio" class="btn btn-default btn-lg"><br>
+        <p id="demo"></p>
+    </div>
+  </form>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center more">    
+  <h2 class="margin">About This Project</h2>
+  <p>Talking Software Avatar is one of 3 subprojects of a virtual online learning platform, SmartCampus, that was started to bring convenience to student life on campus. 
+
+    With the recent shift to online learning, it has become more difficult for students to find answers to some common questions. 
+    Typically, when a student is looking for an answer to their problem, they are redirected to a general FAQ page that gives a generic answer and often does not provide the answer best suited to their situation. 
+    
+    The purpose of our project is to start the process in creating a fully functional virtual assistant for students. The starting point for this virtual assistant is to take the voice input from a user, and apply our program to convert the input from speech to text, as well as obtain the emotion of the user from their voice input. 
+    
+    This analysis will then be combined with other models and analyses to determine the level of competence of the user on the subject of discussion so that the virtual assistant can provide the best-suited answers to their questions. 
+  </p> 
+  <p>Our program consists of a voice-to-text program that takes in live input from a user and converts that into text. 
+      Our main model is a Convolutional Neural Network that is trained and tested to analyze the voice tone and volume of a sample audio to understand the user’s emotions while making their request.
+      This analysis will ensure that each response is customized to a user’s individual request, which will offer a more interactive and accurate experience. 
+  </p> 
+  <p>
+    Some tools used in our implementation include libraries such as: Pandas, Librosa, Tensorflow, Keras, Scikit-learn, NumPy, and matplotlib.<br>
+    These libraries are commonly used for programs that require data analysis, audio processing, machine learning, neural networks, mathematical operations, and plotting.  
+  </p>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+  <p>Created By Saffa Alvi and Nour ElKott</p>  
+</footer>
+
+</body>
+</html>
+
+<script> document.getElementById('demo1').onclick = myFunction; 
+    function myFunction() {
+    document.getElementById("demo").innerHTML = "Recording audio..."; } 
+</script>
+

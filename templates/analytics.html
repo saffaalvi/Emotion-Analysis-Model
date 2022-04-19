@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Model Analytics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <style>
+    body {
+    font: 24px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #030c15;
+    }
+
+    .container-fluid {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    }
+
+    .container-footer {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    }
+
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 200%;
+    }
+
+    .setpadding {
+      padding-left:25px
+    }
+
+    .space {
+        padding-bottom: 10px;
+    }
+
+    .morespace {
+        padding-bottom: 15px;
+        font-size: 25px;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    li {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">SmartCampus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/saffaalvi/Emotion-Analysis-Model">GitHub</a></li>
+        <li><a href="https://www.uwindsor.ca/">University of Windsor</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-left">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <li><a href="/model">CNN</a></li>
+        <li><a href="/notebook">Jupyter Notebook</a></li>
+        <li><a href="/dataset">Dataset - Ravdess</a></li>
+        <li><a href="/analytics">Model Analytics</a></li>
+      </div>
+      <div class="col-sm-8 setpadding text-left"> 
+        <h1>Model Analysis and Results</h1>
+        <a href="#summary">Model Summary</a><br>
+        <a href="#fit">Fitting the Model (Training)</a><br>
+        <a href="#accuracy">Accuracy (Plots)</a><br>
+        <a href="#observations">Observations</a><br>
+        <hr>
+      </div>
+
+
+      <div id="summary" class="col-sm-8 setpadding text-left space"> 
+        <h2>Model Summary</h2>
+        <p>
+          INSERT PICTURE OF MODEL SUMMARY HERE
+        </p>
+      </div>
+      <div id="fit" class="col-sm-8 setpadding text-left space"> 
+        <h2>Fitting the Model (Training)</h2>
+        <p>
+          INSERT PICTURE OF EPOCHS HERE
+        </p>
+      </div>
+      <div id="accuracy" class="col-sm-8 setpadding text-left space"> 
+        <h2>Accuracy (Plots)</h2>
+        <p>
+          INSERT PICTURE OF PLOTS/ACCURACY HERE
+        </p>
+      </div>
+      <div id="observations" class="col-sm-8 setpadding text-left space"> 
+        <h2>Observations</h2>
+        <p>
+          Talk about predictions from the website here
+        </p>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="container-footer bg-4 text-center">
+    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+    <p>Created By Saffa Alvi and Nour ElKott</p>  
+  </footer>
+  
+  </body>
+  </html>
+  
