@@ -15,6 +15,10 @@ Deployed at [emotion-analysis-cnn.herokuapp.com](https://emotion-analysis-cnn.he
 
 ## Implementation
 
+### User Interface
+
+The UI is implemented in `app.py`. Flask is used as the back-end framework for the web application. The UI is composed of basic HTML for the page structure, and BootStrap for style. The main page for the UI is `index.html`, located in the templates folder. The website was deployed with Heroku.
+
 This repository contains the source codes for this program. The files it contains are as follows:
 
 Local:
