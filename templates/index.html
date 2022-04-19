@@ -47,9 +47,11 @@
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
   <h2 class="margin">Speech-to-Text Converter and Model Prediction</h2>
-  <p>Provide an audio input (.wav file only) to the model to convert from speech to text and to see which emotion the model predicts! <br> 
-    *The prediction from model feature will only work for a local deployment. If you are loading an audio file, please make sure it is in the same directory as app.py otherwise it will raise an error.</p><br>
-  <form method="POST" enctype="multipart/form-data">
+    <p>Provide an audio input (.wav file only) to the model to convert from speech to text and to see which emotion the model predicts! <br> 
+      *The prediction from model feature will only work for a local deployment. <br>
+      If you are loading an audio file, please make sure it is in the same directory as app.py otherwise it will raise an error.<br>
+      The "Record Live Audio" will record from the microphone for a duration of 3 seconds.</p>  
+      <form method="POST" enctype="multipart/form-data">
     <div class="margin2">
         <input type="file" name="file" accept=".wav" class="text-center margin2 center-block btn btn-default btn-lg" />
         <br>
