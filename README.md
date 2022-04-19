@@ -2,6 +2,19 @@
 
 Deployed at [emotion-analysis-cnn.herokuapp.com](emotion-analysis-cnn.herokuapp.com) with limited functionality (takes a few seconds to load). Can run this locally with Flask to get full functionality.
 
+## Highlights and Features
+
+- Speech-to-Text Converter
+- Emotion Analysis Prediction
+- Convolutional Neural Network Model has high accuracy
+- Can process both live recordings and loaded audio files
+- GitHub page provides three deployments:
+  - Local through command-line
+  - Flask Application
+  - Deployed on Heroku for public access (limited functionality)
+
+## Implementation
+
 This repository contains the source codes for this program. The files it contains are as follows:
 
 Local:
@@ -13,6 +26,7 @@ Local:
   - To predict from an audio file: `python predict.py <filename>`. Please enter the full filename and relative path.
   - To predict from a live audio: `python predict.py record`. This will record from your device microphone for the duration of 3 seconds, then display the transcribed text and predicted emotion. *May have to change sounddevice.rec parameter ‘channels’ to either 1 or 2 based on device.
 - **ravdess.wav**: sample audio file from RAVDESS dataset.
+
 Flask:
 - **predict2.py**: Same as predict.py but just returns some outputs for Flask development.
 - **app.py**: Code to run the application on Flask.
@@ -65,3 +79,12 @@ Run in this order to ensure all files are properly generated.
 9. `python extract_features.py`
 10. `python model.py`
 11. `python predict.py record` or `python predict.py <file-name-with-full-relative-path>`
+
+## Limitations
+On Heroku, we are unable to upload files and get the model to predict the emotion due to size limitations and not being able to access the uploaded file object to load from librosa. The Record Live Audio functionality also does not work as we could not access a user's device microphone through the cloud. Model predictions and live audio processing therefore can only be made by deploying locally.
+
+Deploying on Flask, the only limitation is that the selected file has to be in the home directory (same as `app.py`) so user will have to move the desired audio file into that directory. This was due to not being able to get the filepath of the loaded object and we were unable to convert it from a BytesIO object to a .wav file.
+
+We were unable to upload the RAVDESS dataset onto this repository so if a user wants to run `prep_dataset.py` or access RAVDESS audio files, they will have to download it themselves. Running `extract_features.py` also takes a few minutes as it iterates through all of the RAVDESS files. However, saving the data to a .csv ensured this would only have to be run once.
+
+
